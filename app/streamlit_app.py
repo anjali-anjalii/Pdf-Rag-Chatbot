@@ -1,4 +1,9 @@
 import os
+os.environ["STREAMLIT_SERVER_HEADLESS"] = "true"
+os.environ["STREAMLIT_SERVER_PORT"] = "8501"
+os.environ["STREAMLIT_SERVER_ENABLE_STATIC_SERVING"] = "true"
+os.environ["STREAMLIT_SERVER_FILE_WATCHER_TYPE"] = "none"  # ⛔ Disable auto-reload
+
 import streamlit as st
 import config
 from pdf_rag_core import load_pdfs, embed_docs, query_engine, fallback_logic
